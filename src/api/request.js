@@ -6,7 +6,7 @@ const authAxios = (token = null) => axios.create({
   data: {},
   mode: 'no-cors',
   headers: {
-    // 'Accept': 'application/json',
+    'Accept': '*/*',
     'Content-Type': 'application/json',
     // 'Access-Control-Allow-Headers': 'X-CSRF-Token, Content-Type',
     // 'Access-Control-Allow-Origin': '*',

@@ -84,13 +84,13 @@ const SalonDetails = ({ addAppointments, history }) => {
     <div>
       {message && <p className="error-msg d-flex p-3 justify-content-center bg-danger text-white">{message}</p>}
       {
-        item
-          ? (
+        item && item.length
+          ? item.map((item) => (
             <>
-              <ItemDetails item={item} />
+              <ItemDetails key={item._id} item={item} />
               <BookAppointment handleSubmit={handleSubmit} prevDate={disablePastDate} />
             </>
-          )
+          ))
           : (heatMap())
       }
     </div>

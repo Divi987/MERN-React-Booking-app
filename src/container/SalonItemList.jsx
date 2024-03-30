@@ -43,7 +43,7 @@ const SalonItemList = () => {
           {
           items && items.length
             ? items.map((item) => (
-              <Item key={item.id} item={item} />
+              <Item key={item._id} item={item} />
             ))
             : (heatMap())
         }

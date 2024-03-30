@@ -4,24 +4,21 @@ import store from '../redux/store';
 import authAxios from './request';
 
 export const loggedIn = async (username, password) => {
-  const response = await authAxios().post('/users/login', { username, password  })
-    .then((response) => response.data).catch((error) => error);
-    console.log(response)
+  const response = await authAxios().post('/users/login', { userName: username, password: password  })
+  .then((response) => response.data).catch((error) => error);
   return response;
 };
 
 export const signedUp = async (username, password) => {
-  console.log(username, password)
-  const response = await authAxios().post('/users/new', {  username, password  })
+  const response = await authAxios().post('/users/new', {  userName: username, password: password  })
     .then((response) => response.data).catch((error) => error);
-    console.log(response)
   return response;
 };
 
 export const redirectToHome = async (userId) => {
-  const response = await authAxios(cookie.load('token')).post('login/auto_login', { user: { user_id: userId } })
+  const response = await authAxios(cookie.load('token')).post('/users/login/auto_login', { _id: userId  })
     .then((response) => response.data).catch((error) => error);
-  return response;
+    return response;
 };
 
 export const bookAppointment = async (date, id, userId, branch) => {

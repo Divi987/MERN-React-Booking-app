@@ -19,7 +19,7 @@ const Routess = () => (
         <Route  path="/login" element={< Login />} loader={(props) => (<Login history={props.history} />)} />
         <Route  path="/signup" element={< SignUp />} loader={(props) => (<SignUp history={props.history} />)} />
         <Route  path="/items" element={<SalonItemList />} />
-        <Route  path="/items/:id" element={< SalonDetails />} render={(props) => (<SalonDetails history={props.history} />)} />
+        <Route  path="/item/:id" element={< SalonDetails />} render={(props) => (<SalonDetails history={props.history} />)} />
         <Route  path="/appointments" element={<AppointmentLists />} />
       </Routes>
     </div>

@@ -45,7 +45,7 @@ const NavBar = () => {
       <nav className="nav">
         {isLoggedIn ? (
           <div className={`nav__items${toggleNavClass}`}>
-            <span>{`Welcome ${user.user.username}`}</span>
+            <span>{`Welcome ${user.user.userName}`}</span>
             <NavLink
               to="/items"
               className={({ isActive }) => (isActive ? "selected" : "")}

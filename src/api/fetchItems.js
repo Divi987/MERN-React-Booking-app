@@ -16,14 +16,14 @@ export const fetchItemList = async () => {
 
 export const fetchItemDetail = async (id) => {
   store.dispatch(removeSingleItem());
-  const response = await authAxios(cookie.load('token')).get(`item/${id}`)
+  const response = await authAxios(cookie.load('token')).get(`/item/${id}`)
     .then((response) => store.dispatch(addSingleItem(response.data))).catch((error) => error);
   return response;
 };
 
 export const fetchUserAppointments = async () => {
   store.dispatch(removeAppointmentItems());
-  const response = await authAxios(cookie.load('token')).get('appointments')
+  const response = await authAxios(cookie.load('token')).get('/appointments')
     .then((response) => store.dispatch(addAppointmentItems(response.data))).catch((error) => error);
   return response;
 };

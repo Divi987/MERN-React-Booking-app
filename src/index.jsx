@@ -42,7 +42,7 @@ if (cookie.load('token')) {
     store.dispatch(signUp({}));
     cookie.remove('token');
   }
-  redirectLogin(decodedToken.user_id);
+  redirectLogin(decodedToken.id);
 } else {
   store.dispatch(logIn(false));
 }

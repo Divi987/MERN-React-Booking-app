@@ -10,7 +10,7 @@ const Item = ({ item }) => {
 
   return (
     <div className="item">
-      <Link to={`items/${_id}`}>
+      <Link to={`/item/${_id}`}>
         <div className="item__data">
           <figure>
             <img src={imageUrl} alt={imageUrl} />
